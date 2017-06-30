@@ -10,20 +10,21 @@ import Foundation
 
 class School: CustomStringConvertible {
     var id = "0"
-    var totalNumberAdded = 1
-    var totalNumberRemoved = 0
-    var students = 1
-    var out = 0
+    var students = ["1"]
+    var head = 0
     
-    convenience init(id aId: String) {
+    convenience init(id aId: String, roll aRoll: String) {
         self.init()
         id = aId
+        students = [aRoll]
     }
     
     var description: String {
-        return "id \(id) totalNumberAdded \(totalNumberAdded) totalNumberRemoved \(totalNumberRemoved) students \(students) out \(out)"
+        return "id \(id) students \(students)"
     }
 }
+
+var time = Date().timeIntervalSince1970
 
 var queue = [School]()
 
@@ -41,38 +42,34 @@ while n != 0 {
         
         var foundSchool = false
         
-        for i in 0..<queue.count {
-            
-            var school = queue[i]
+        for school in queue {
             if school.id == components[1] {
-                school.students += 1
-                school.totalNumberAdded += 1
-                if school.students != Int(components[2])! {
-                    print("!!!")
-                }
                 foundSchool = true
+                school.students.append(components[2])
                 break;
             }
         }
         
         if foundSchool == false {
-            var school = School(id: components[1]);
+            var school = School(id: components[1], roll: components[2]);
             queue.append(school)
         }
         
     } else {
         var school = queue.first!
-        school.out += 1
-        print("\(school.id) \(school.out)")
-        school.students -= 1
-        school.totalNumberRemoved += 1
-        if school.students == 0 {
-            queue.remove(at: 0)
+        var roll = school.students[school.head]
+        print("\(school.id) \(roll)")
+        school.head += 1
+        if school.students.count == school.head {
+            queue.removeFirst()
         }
     }
     
     n -= 1
 }
+
+time -= Date().timeIntervalSince1970
+print(time)
 
 //struct Student {
 //    var school = "0";
