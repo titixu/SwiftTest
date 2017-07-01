@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E887922E1F04C2FF0007D443 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887922D1F04C2FF0007D443 /* main.swift */; };
 		E88B3CF11F0617A60071865D /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF01F0617A60071865D /* Queue.swift */; };
+		E88B3CF51F0764390071865D /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF41F0764390071865D /* HashTable.swift */; };
+		E88B3CF71F0764D50071865D /* QueueQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF61F0764D50071865D /* QueueQ.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 		E887922D1F04C2FF0007D443 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E88B3CF01F0617A60071865D /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		E88B3CF31F06895F0071865D /* 2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
+		E88B3CF41F0764390071865D /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		E88B3CF61F0764D50071865D /* QueueQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueQ.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				E88B3CF31F06895F0071865D /* 2.txt */,
 				E887922D1F04C2FF0007D443 /* main.swift */,
 				E88B3CF01F0617A60071865D /* Queue.swift */,
+				E88B3CF41F0764390071865D /* HashTable.swift */,
+				E88B3CF61F0764D50071865D /* QueueQ.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -126,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E887922E1F04C2FF0007D443 /* main.swift in Sources */,
+				E88B3CF71F0764D50071865D /* QueueQ.swift in Sources */,
+				E88B3CF51F0764390071865D /* HashTable.swift in Sources */,
 				E88B3CF11F0617A60071865D /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
