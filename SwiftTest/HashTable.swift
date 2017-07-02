@@ -69,8 +69,6 @@ class XsquareAndDouble {
     }
 }
 
-
-
 func MaxOccurrence() {
     
     let aString = readLine()!
@@ -95,10 +93,65 @@ func MaxOccurrence() {
 
 
 func DifficultCharaters() {
-    var collection = [[Character : Int]]()
-    let allCharaters = "zyxwvutsrqponmlkjihgfedcba"
-    for s in allCharaters.characters {
-        collection.append([s: 0])
+    
+    let fileURL = URL(fileURLWithPath: "/Users/samxu/Desktop/Projects/SwiftTest/SwiftTest/DifficultCharaters.txt")
+    let string = try! String(contentsOf: fileURL)
+    var stringCom = string.components(separatedBy: "\r\n")
+
+    class Node {
+        var charater: Character
+        var value: Int
+        
+        init(c: Character, v: Int) {
+            charater = c
+            value = v
+        }
+        
+        func code() -> UnicodeScalar {
+            return String(charater).unicodeScalars.min()!
+        }
+        
     }
-    print(collection)
+    
+    var dictionary = [Character: Int]()
+    
+    let allCharaters = "zyxwvutsrqponmlkjihgfedcba"
+    for c in allCharaters.characters {
+        dictionary[c] = 0
+    }
+    
+    let n = stringCom.removeFirst()
+    var testsCases = Int(n)!
+    
+    while testsCases > 0 {
+        
+        var cases = stringCom.removeFirst()
+        for s in cases.characters {
+            dictionary[s] = dictionary[s]! + 1
+        }
+        
+        var collection = [Node]()
+        
+        for (key, value) in dictionary {
+            let node = Node(c: key, v: value)
+            collection.append(node)
+        }
+        
+        collection = collection.sorted(by: { (left, right) -> Bool in
+            if left.value == right.value {
+                return (left.code() > right.code())
+            }
+            return left.value < right.value
+        })
+        
+        var stringToPrint = ""
+        for node in collection {
+            stringToPrint.append(node.charater)
+            stringToPrint.append(" ")
+        }
+        print(stringToPrint)
+        
+        testsCases -= 1
+    }
 }
+

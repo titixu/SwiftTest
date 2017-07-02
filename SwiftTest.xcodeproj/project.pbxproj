@@ -32,6 +32,7 @@
 		E88B3CF31F06895F0071865D /* 2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
 		E88B3CF41F0764390071865D /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		E88B3CF61F0764D50071865D /* QueueQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueQ.swift; sourceTree = "<group>"; };
+		E88B3CF81F07F3230071865D /* DifficultCharaters.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DifficultCharaters.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				E88B3CF31F06895F0071865D /* 2.txt */,
+				E88B3CF81F07F3230071865D /* DifficultCharaters.txt */,
 				E887922D1F04C2FF0007D443 /* main.swift */,
 				E88B3CF01F0617A60071865D /* Queue.swift */,
 				E88B3CF41F0764390071865D /* HashTable.swift */,
