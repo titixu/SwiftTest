@@ -308,7 +308,25 @@ func BobAndString() {
     }
 }
 
+func NeedleInTheHaystack() {
+    //https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/a-needle-in-the-haystack-1/
+    
+    var c = LoadFile(name: "hayStack.txt").components(separatedBy: "\n")
+    
+    let t = Int(c.removeFirst())!
+    
+    for _ in 0..<t {
+        let patten = c.removeFirst()
+        let text = c.removeFirst()
+        var result = "NO"
 
+        if text.contains(patten) || text.contains(String(patten.characters.reversed())) {
+            result = "YES"
+        }
+
+        print(result)
+    }
+}
 
 
 

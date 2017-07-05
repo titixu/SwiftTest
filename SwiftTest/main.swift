@@ -24,4 +24,8 @@ import Foundation
 
 //XsquareAndPalindromesInsertion()
 
-BobAndString()
+//BobAndString()
+
+NeedleInTheHaystack()
+
+
