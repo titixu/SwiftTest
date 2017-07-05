@@ -16,4 +16,10 @@ import Foundation
 
 //MaxOccurrence()
 
-DifficultCharaters()
+//DifficultCharaters()
+
+//PairSums()
+
+//MindPalaces()
+
+XsquareAndPalindromesInsertion()

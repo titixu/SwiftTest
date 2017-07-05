@@ -155,3 +155,139 @@ func DifficultCharaters() {
     }
 }
 
+func PairSums() {
+    
+    var comp = readLine()!
+    let firstPart = comp.components(separatedBy: " ")
+    
+    let expected = Int(firstPart.last!)!
+    
+    var sorted = [Int]()
+    for _ in 0..<1000000 {
+        sorted.append(0)
+    }
+    
+    comp = readLine()!
+    let secondPart = comp.components(separatedBy: " ")
+    
+    for aString in secondPart {
+        let i = Int(aString)!
+        sorted[i] = sorted[i] + 1
+    }
+    
+    var head = 0
+    var tail = sorted.count - 1
+    
+    while head != tail {
+        
+        let l = Int(sorted[head])
+        if l == 0 {
+            head += 1
+            continue
+        } else if l > 1 && (head + head) == expected {
+            print("YES")
+            return
+        }
+        
+        let t = Int(sorted[tail])
+        if t == 0 {
+            tail -= 1
+            continue
+        } else if t > 1 && (tail + tail) == expected {
+            print("YES")
+            return
+        }
+        
+        let sum = head + tail
+        if  sum == expected {
+            print("YES")
+            return
+        } else if sum < expected {
+            head += 1
+        } else {
+            tail -= 1
+        }
+    }
+    
+    print("NO")
+    
+}
+
+func MindPalaces() {
+    var lines = LoadFile(name: "MindPalaces.txt").components(separatedBy: "\n")
+    
+    var collection = [String : String]()
+    
+    var line = lines.removeFirst().components(separatedBy: " ")
+    let row = Int(line[0])!
+    
+    for r in 0..<row {
+        line = lines.removeFirst().components(separatedBy: " ")
+        for c in 0..<line.count {
+            collection[line[c]] = "\(r) \(c)"
+        }
+    }
+    
+    let q = Int(lines.removeFirst())!
+    
+    for _ in 0..<q {
+        let s = lines.removeFirst()
+        if let string = collection[s] {
+            print(string)
+        } else {
+            print("-1 -1")
+        }
+    }
+    
+}
+
+func XsquareAndPalindromesInsertion() {
+    
+    let t = Int(readLine()!)!
+    
+    for _ in 0..<t {
+        
+        var s = readLine()!
+        var collection = [Character: Int]()
+        var result = 0
+        
+        for c in s.characters {
+            collection[c] = (collection[c] ?? 0) + 1
+        }
+        
+        for (_, value) in collection {
+            if value % 2 != 0 {
+                result += 1
+            }
+        }
+        
+        if result > 0 {
+            result -= 1
+        }
+        
+        print(result)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

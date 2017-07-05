@@ -11,6 +11,7 @@
 		E88B3CF11F0617A60071865D /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF01F0617A60071865D /* Queue.swift */; };
 		E88B3CF51F0764390071865D /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF41F0764390071865D /* HashTable.swift */; };
 		E88B3CF71F0764D50071865D /* QueueQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CF61F0764D50071865D /* QueueQ.swift */; };
+		E88B3CFC1F0882C50071865D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B3CFA1F08818B0071865D /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,12 @@
 		E88B3CF41F0764390071865D /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		E88B3CF61F0764D50071865D /* QueueQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueQ.swift; sourceTree = "<group>"; };
 		E88B3CF81F07F3230071865D /* DifficultCharaters.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DifficultCharaters.txt; sourceTree = "<group>"; };
+		E88B3CF91F0880E30071865D /* pairSums.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = pairSums.txt; sourceTree = "<group>"; };
+		E88B3CFA1F08818B0071865D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		E88B3D021F0899120071865D /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		E88B3D041F089C420071865D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E88B3D071F089C800071865D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		E88B3D091F08D2A10071865D /* MindPalaces.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MindPalaces.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			children = (
 				E887922C1F04C2FF0007D443 /* SwiftTest */,
 				E887922B1F04C2FF0007D443 /* Products */,
+				E88B3D011F0899120071865D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,14 +73,27 @@
 		E887922C1F04C2FF0007D443 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				E88B3D091F08D2A10071865D /* MindPalaces.txt */,
 				E88B3CF31F06895F0071865D /* 2.txt */,
+				E88B3CF91F0880E30071865D /* pairSums.txt */,
 				E88B3CF81F07F3230071865D /* DifficultCharaters.txt */,
 				E887922D1F04C2FF0007D443 /* main.swift */,
 				E88B3CF01F0617A60071865D /* Queue.swift */,
 				E88B3CF41F0764390071865D /* HashTable.swift */,
 				E88B3CF61F0764D50071865D /* QueueQ.swift */,
+				E88B3CFA1F08818B0071865D /* Utility.swift */,
 			);
 			path = SwiftTest;
+			sourceTree = "<group>";
+		};
+		E88B3D011F0899120071865D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E88B3D071F089C800071865D /* libstdc++.tbd */,
+				E88B3D041F089C420071865D /* libc++.tbd */,
+				E88B3D021F0899120071865D /* libc++abi.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +128,7 @@
 				TargetAttributes = {
 					E88792291F04C2FF0007D443 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88B3CFC1F0882C50071865D /* Utility.swift in Sources */,
 				E887922E1F04C2FF0007D443 /* main.swift in Sources */,
 				E88B3CF71F0764D50071865D /* QueueQ.swift in Sources */,
 				E88B3CF51F0764390071865D /* HashTable.swift in Sources */,
@@ -236,7 +259,10 @@
 		E88792321F04C2FF0007D443 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -244,6 +270,8 @@
 		E88792331F04C2FF0007D443 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
