@@ -270,6 +270,43 @@ func XsquareAndPalindromesInsertion() {
     
 }
 
+func BobAndString() {
+    
+    let t = Int(readLine()!)!
+    
+    for _ in 0..<t {
+        
+        var tString = readLine()!
+        var sString = readLine()!
+        
+        var result = 0
+        
+        var collection = [Character: Int]()
+        for c in sString.characters {
+            collection[c] = (collection[c] ?? 0) + 1
+        }
+        
+        for c in tString.characters {
+            if let value = collection[c]
+            {
+                if value > 0 {
+                    collection[c] = value - 1
+                } else {
+                    result += 1
+                }
+            } else {
+                result += 1
+            }
+        }
+        
+        for (_, value) in collection {
+            if value > 0 {
+                result += value
+            }
+        }
+        print(result)
+    }
+}
 
 
 

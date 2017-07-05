@@ -22,4 +22,6 @@ import Foundation
 
 //MindPalaces()
 
-XsquareAndPalindromesInsertion()
+//XsquareAndPalindromesInsertion()
+
+BobAndString()
