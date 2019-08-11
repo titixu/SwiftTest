@@ -26,6 +26,7 @@ import Foundation
 
 //BobAndString()
 
-NeedleInTheHaystack()
+//NeedleInTheHaystack()
+findingMino()
 
 

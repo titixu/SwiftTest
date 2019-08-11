@@ -43,13 +43,12 @@ class XsquareAndDouble {
         var testCases = Int(readLine()!)!
         while testCases > 0 {
             
-            var aString = readLine()!
-            let characters = aString.characters
+            let aString = readLine()!
             
             var s = Set<Character>()
             var found = false
             
-            for c in characters {
+            for c in aString {
                 
                 let (inserted, _) = s.insert(c)
 
@@ -76,7 +75,7 @@ func MaxOccurrence() {
     var maxValue = 0
     var result = "A"
     
-    for c in aString.characters {
+    for c in aString {
         let s = String(c)
         let k = s.unicodeScalars.min()!
         collection[k] = ((collection[k]) ?? 0) + 1
@@ -116,7 +115,7 @@ func DifficultCharaters() {
     var dictionary = [Character: Int]()
     
     let allCharaters = "zyxwvutsrqponmlkjihgfedcba"
-    for c in allCharaters.characters {
+    for c in allCharaters {
         dictionary[c] = 0
     }
     
@@ -125,8 +124,8 @@ func DifficultCharaters() {
     
     while testsCases > 0 {
         
-        var cases = stringCom.removeFirst()
-        for s in cases.characters {
+        let cases = stringCom.removeFirst()
+        for s in cases {
             dictionary[s] = dictionary[s]! + 1
         }
         
@@ -247,11 +246,11 @@ func XsquareAndPalindromesInsertion() {
     
     for _ in 0..<t {
         
-        var s = readLine()!
+        let s = readLine()!
         var collection = [Character: Int]()
         var result = 0
         
-        for c in s.characters {
+        for c in s {
             collection[c] = (collection[c] ?? 0) + 1
         }
         
@@ -276,17 +275,17 @@ func BobAndString() {
     
     for _ in 0..<t {
         
-        var tString = readLine()!
-        var sString = readLine()!
+        let tString = readLine()!
+        let sString = readLine()!
         
         var result = 0
         
         var collection = [Character: Int]()
-        for c in sString.characters {
+        for c in sString {
             collection[c] = (collection[c] ?? 0) + 1
         }
         
-        for c in tString.characters {
+        for c in tString {
             if let value = collection[c]
             {
                 if value > 0 {
@@ -315,19 +314,22 @@ func NeedleInTheHaystack() {
     
     let t = Int(c.removeFirst())!
     
+    let time = Date()
+    
     for _ in 0..<t {
         let patten = c.removeFirst()
         let text = c.removeFirst()
         var result = "NO"
 
-        if text.contains(patten) || text.contains(String(patten.characters.reversed())) {
+        if text.contains(patten) || text.contains(String(patten.reversed())) {
             result = "YES"
         }
 
         print(result)
     }
+    
+    print("time \(Date().timeIntervalSince(time))")
 }
-
 
 
 

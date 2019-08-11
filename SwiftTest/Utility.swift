@@ -9,7 +9,7 @@
 import Foundation
 
 public func LoadFile(name: String) -> String {
-    let fileURL = URL(fileURLWithPath: "/Users/samxu/Desktop/Projects/SwiftTest/SwiftTest/\(name)")
+    let fileURL = URL(fileURLWithPath: "/Users/anxu/Projects/SwiftTest/SwiftTest/\(name)")
     return try! String(contentsOf: fileURL)
 }
 
